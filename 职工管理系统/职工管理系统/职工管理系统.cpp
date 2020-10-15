@@ -1,0 +1,53 @@
+#include<iostream>
+#include<string>
+#include<fstream>
+#include"workerManager.h"
+using namespace std;
+
+int main()
+{
+	WorkerManager wm;
+	//wm.Show_Menu();
+
+	int choice = 0;
+
+	while (true)
+	{
+		wm.Show_Menu();
+		cout << "请输入您的选择：" << endl;
+
+		cin >> choice;
+
+		switch (choice)
+		{
+		case 0://退出
+			wm.ExitSystem();
+			break;
+		case 1://增加
+			wm.Add_Emp();
+			break;
+		case 2://显示
+			wm.Show_Emp();
+			break;
+		case 3://删除
+			wm.Del_Emp();
+			break;
+		case 4://修改
+			wm.Mod_Emp();
+			break;
+		case 5://查找
+			wm.Find_Emp();
+			break;
+		case 6://排序
+			wm.Sort_Emp();
+			break;
+		case 7://清空
+			break;
+		default:
+			system("cls");
+			break;
+		}
+	}
+	system("pause");
+	return 0;
+}
